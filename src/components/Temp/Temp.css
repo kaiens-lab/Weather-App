@@ -1,6 +1,6 @@
 .temp {
   position: absolute;
-  bottom: 0;
+  bottom: 0.1em;
   font-size: 7rem;
   font-weight: 400;
   margin-left: 0.5em;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Brand from "./components/Brand/Brand";
 import Temperature from "./components/Temp/Temp.jsx";
 import CityInfo from "./components/CityInfo/CityInfo.jsx";
+import Weather from "./components/Weather/Weather.jsx";
 import "./styles/App.css";
 
 function App() {
@@ -24,13 +25,21 @@ function App() {
   };
 
   return (
-    <div className="weather-app">
-      <Brand />
-      <Temperature temp={weatherData?.current?.temp_c} />
-      <CityInfo
-        localtime={weatherData?.location?.localtime}
-        cityName={weatherData?.location?.name}
-      />
+    <div className="container">
+      <div className="weather-app">
+        <Brand />
+        <Temperature temp={weatherData?.current?.temp_c} />
+        <CityInfo
+          localtime={weatherData?.location?.localtime}
+          cityName={weatherData?.location?.name}
+        />
+        {weatherData && (
+          <Weather
+            conditionIcon={weatherData.current.condition.icon}
+            conditionText={weatherData.current.condition.text}
+          />
+        )}
+      </div>
     </div>
   );
 }

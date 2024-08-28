@@ -1,0 +1,20 @@
+.weather-condition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 4.5em;
+  left: 34em;
+}
+
+.weather-icon {
+  position: relative;
+  bottom: 0em;
+  width: 50px;
+}
+
+.condition-text {
+  position: relative;
+  top: -0.5em;
+}
