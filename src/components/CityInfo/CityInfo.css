@@ -1,0 +1,15 @@
+.city-info {
+  position: absolute;
+  bottom: 5em;
+  left: 20em;
+  margin: 0;
+}
+
+.city-name {
+  font-size: 3rem;
+}
+
+.city-time {
+  display: flex;
+  font-size: 0.875rem;
+}

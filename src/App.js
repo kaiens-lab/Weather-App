@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Brand from "./components/Brand/Brand";
 import Temperature from "./components/Temp/Temp.jsx";
+import CityInfo from "./components/CityInfo/CityInfo.jsx";
 import "./styles/App.css";
 
 function App() {
@@ -26,6 +27,10 @@ function App() {
     <div className="weather-app">
       <Brand />
       <Temperature temp={weatherData?.current?.temp_c} />
+      <CityInfo
+        localtime={weatherData?.location?.localtime}
+        cityName={weatherData?.location?.name}
+      />
     </div>
   );
 }
