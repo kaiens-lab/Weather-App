@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Brand from "./components/Brand/Brand";
-// import Temp from "./components/Temp/Temp.jsx";
-// import CityTime from "./components/CityTime/CityTime.jsx";
-// import Weather from "./components/Weather/Weather.jsx";
-// import Panel from "./components/Panel/Panel.jsx";
+import Temperature from "./components/Temp/Temp.jsx";
 import "./styles/App.css";
 
 function App() {
@@ -28,6 +25,7 @@ function App() {
   return (
     <div className="weather-app">
       <Brand />
+      <Temperature temp={weatherData?.current?.temp_c} />
     </div>
   );
 }
