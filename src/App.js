@@ -21,8 +21,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         if (data.error) {
-          alert("City not found! Please try again."); // 弹出提示框
-          setError("City not found!");
+          setError("City not found! Please try again.");
         } else {
           setError(null);
           setWeatherData(data);
@@ -57,6 +56,7 @@ function App() {
         <WeatherPanel
           fetchWeatherData={fetchWeatherData}
           weatherData={weatherData}
+          error={error}
         />
       </div>
     </div>

@@ -82,3 +82,11 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.error-message {
+  color: #fff;
+  font-size: 0.875rem;
+  margin-top: -3em;
+  background-color: #76767677;
+  width: 13.5rem;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Panel.css";
 
-const WeatherPanel = ({ fetchWeatherData, weatherData }) => {
+const WeatherPanel = ({ fetchWeatherData, weatherData, error }) => {
   const [cityInput, setCityInput] = React.useState("");
   const cities = ["Taipei", "New York", "California", "Tokyo"];
 
@@ -12,7 +12,7 @@ const WeatherPanel = ({ fetchWeatherData, weatherData }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (cityInput.trim() === "") {
-      alert("Please type in a city name");
+      setCityInput("");
     } else {
       fetchWeatherData(cityInput);
       setCityInput("");
@@ -33,7 +33,7 @@ const WeatherPanel = ({ fetchWeatherData, weatherData }) => {
           <i className="fas fa-search"></i>
         </button>
       </form>
-
+      {error && <p className="error-message">{error}</p>}{" "}
       <ul className="cities">
         {cities.map((city) => (
           <li key={city} className="city" onClick={() => handleCityClick(city)}>
@@ -41,7 +41,6 @@ const WeatherPanel = ({ fetchWeatherData, weatherData }) => {
           </li>
         ))}
       </ul>
-
       {weatherData && (
         <ul className="details">
           <h4>Weather Details</h4>
