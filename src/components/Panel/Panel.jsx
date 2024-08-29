@@ -3,7 +3,7 @@ import "./Panel.css";
 
 const WeatherPanel = ({ fetchWeatherData, weatherData }) => {
   const [cityInput, setCityInput] = React.useState("");
-  const cities = ["New York", "California", "Paris", "Tokyo"];
+  const cities = ["Taipei", "New York", "California", "Tokyo"];
 
   const handleCityClick = (city) => {
     fetchWeatherData(city);
