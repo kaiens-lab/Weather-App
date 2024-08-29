@@ -8,6 +8,7 @@ import "./styles/App.css";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchWeatherData("London");
@@ -19,25 +20,40 @@ function App() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        setWeatherData(data);
+        if (data.error) {
+          alert("City not found! Please try again."); // 弹出提示框
+          setError("City not found!");
+        } else {
+          setError(null);
+          setWeatherData(data);
+        }
       })
-      .catch((error) => console.error("Error fetching weather data:", error));
+      .catch((error) => {
+        console.error("Error fetching weather data:", error);
+        setError("An error occurred while fetching the weather data.");
+      });
   };
 
   return (
     <div className="container">
-      {/* Include the Weather component for handling the background and button color */}
       <Weather weatherData={weatherData} />
       <div className="weather-app-content">
         <Brand />
-        <Temperature temp={weatherData?.current?.temp_c} />
-        <CityInfo
-          localtime={weatherData?.location?.localtime}
-          cityName={weatherData?.location?.name}
-          conditionIcon={weatherData?.current?.condition?.icon}
-          conditionText={weatherData?.current?.condition?.text}
-        />
+        {weatherData ? (
+          <>
+            <Temperature temp={weatherData.current?.temp_c} />
+            <CityInfo
+              localtime={weatherData.location?.localtime}
+              cityName={weatherData.location?.name}
+              conditionText={weatherData.current?.condition?.text}
+              conditionIcon={weatherData.current?.condition?.icon}
+              conditionCode={weatherData.current?.condition?.code}
+              isDay={weatherData.current?.is_day}
+            />
+          </>
+        ) : (
+          !error && <p>Loading...</p>
+        )}
         <WeatherPanel
           fetchWeatherData={fetchWeatherData}
           weatherData={weatherData}

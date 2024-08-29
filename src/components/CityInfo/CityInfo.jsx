@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./CityInfo.css";
+import Icon from "./Icon";
 
-function CityInfo({ localtime, cityName, conditionIcon, conditionText }) {
+const CityInfo = ({
+  localtime,
+  cityName,
+  conditionText,
+  conditionIcon,
+  isDay,
+}) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
@@ -30,13 +37,6 @@ function CityInfo({ localtime, cityName, conditionIcon, conditionText }) {
     }
   }, [localtime]);
 
-  // Weather icon handling
-  if (!conditionIcon) {
-    return null; // Ensure no rendering before data loads
-  }
-  const iconId = conditionIcon.split("/").pop();
-  const iconSrc = `/assets/icons/day/${iconId}`;
-
   return (
     <div className="city-info">
       <div className="city-detail">
@@ -47,11 +47,12 @@ function CityInfo({ localtime, cityName, conditionIcon, conditionText }) {
         </div>
       </div>
       <div className="weather-condition">
-        <img src={iconSrc} alt="weather icon" className="weather-icon" />
+        <Icon conditionIcon={conditionIcon} isDay={isDay} />{" "}
+        {/* 传递 conditionIcon 和 isDay */}
         <p className="condition-text">{conditionText}</p>
       </div>
     </div>
   );
-}
+};
 
 export default CityInfo;
