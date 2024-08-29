@@ -22,7 +22,6 @@
 
 .weather-app {
   height: 100vh;
-  color: #fff;
   position: relative;
   transition: 500ms; /*0.5s*/
   opacity: 1;

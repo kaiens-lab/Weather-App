@@ -1,0 +1,4 @@
+.container {
+  transition: background-image 1s ease-in-out;
+  background-color: black; /* 黑屏效果 */
+}

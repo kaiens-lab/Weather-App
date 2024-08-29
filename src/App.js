@@ -3,6 +3,7 @@ import Brand from "./components/Brand/Brand";
 import Temperature from "./components/Temp/Temp.jsx";
 import CityInfo from "./components/CityInfo/CityInfo.jsx";
 import WeatherPanel from "./components/Panel/Panel.jsx";
+import Weather from "./components/Weather/Weather.jsx";
 import "./styles/App.css";
 
 function App() {
@@ -26,7 +27,9 @@ function App() {
 
   return (
     <div className="container">
-      <div className="weather-app">
+      {/* Include the Weather component for handling the background and button color */}
+      <Weather weatherData={weatherData} />
+      <div className="weather-app-content">
         <Brand />
         <Temperature temp={weatherData?.current?.temp_c} />
         <CityInfo
