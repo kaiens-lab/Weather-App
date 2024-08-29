@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Brand from "./components/Brand/Brand";
 import Temperature from "./components/Temp/Temp.jsx";
 import CityInfo from "./components/CityInfo/CityInfo.jsx";
-import Weather from "./components/Weather/Weather.jsx";
 import WeatherPanel from "./components/Panel/Panel.jsx";
 import "./styles/App.css";
 
@@ -33,13 +32,9 @@ function App() {
         <CityInfo
           localtime={weatherData?.location?.localtime}
           cityName={weatherData?.location?.name}
+          conditionIcon={weatherData?.current?.condition?.icon}
+          conditionText={weatherData?.current?.condition?.text}
         />
-        {weatherData && (
-          <Weather
-            conditionIcon={weatherData.current.condition.icon}
-            conditionText={weatherData.current.condition.text}
-          />
-        )}
         <WeatherPanel
           fetchWeatherData={fetchWeatherData}
           weatherData={weatherData}

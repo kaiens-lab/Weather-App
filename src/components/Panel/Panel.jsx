@@ -6,7 +6,7 @@ const WeatherPanel = ({ fetchWeatherData, weatherData }) => {
   const cities = ["New York", "California", "Paris", "Tokyo"];
 
   const handleCityClick = (city) => {
-    fetchWeatherData(city); // 只呼叫 fetchWeatherData 函數
+    fetchWeatherData(city);
   };
 
   const handleFormSubmit = (e) => {
@@ -15,7 +15,7 @@ const WeatherPanel = ({ fetchWeatherData, weatherData }) => {
       alert("Please type in a city name");
     } else {
       fetchWeatherData(cityInput);
-      setCityInput(""); // 提交後清空輸入框
+      setCityInput("");
     }
   };
 

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./CityInfo.css";
 
-function CityInfo({ localtime, cityName }) {
-  // 确保在函数参数中正确接收了 cityName
+function CityInfo({ localtime, cityName, conditionIcon, conditionText }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
@@ -31,12 +30,25 @@ function CityInfo({ localtime, cityName }) {
     }
   }, [localtime]);
 
+  // Weather icon handling
+  if (!conditionIcon) {
+    return null; // Ensure no rendering before data loads
+  }
+  const iconId = conditionIcon.split("/").pop();
+  const iconSrc = `/assets/icons/day/${iconId}`;
+
   return (
     <div className="city-info">
-      <div className="city-name">{cityName}</div>
-      <div className="city-time">
-        <div className="time">{time} - </div>
-        <div className="date">{date}</div>
+      <div className="city-detail">
+        <div className="city-name">{cityName}</div>
+        <div className="city-time">
+          <div className="time">{time} - </div>
+          <div className="date">{date}</div>
+        </div>
+      </div>
+      <div className="weather-condition">
+        <img src={iconSrc} alt="weather icon" className="weather-icon" />
+        <p className="condition-text">{conditionText}</p>
       </div>
     </div>
   );
