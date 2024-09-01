@@ -90,3 +90,31 @@
   background-color: #76767677;
   width: 13.5rem;
 }
+@media (max-width: 768px) {
+  .panel {
+    width: 100%;
+    top: 14rem;
+    padding: 2rem;
+  }
+
+  .submit {
+    font-size: 1rem;
+  }
+  .search::placeholder {
+    font-size: 0.9rem;
+  }
+  .panel ul li {
+    margin: 2rem 0;
+    font-size: 0.9rem;
+  }
+  .panel form {
+    margin-bottom: 2em;
+  }
+  .panel ul {
+    padding: 0 0 1em 0;
+    margin: 2em 0;
+  }
+  .panel ul h4 {
+    margin: 2em 0;
+  }
+}
