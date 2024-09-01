@@ -16,7 +16,7 @@ function App() {
 
   const fetchWeatherData = (city) => {
     fetch(
-      `https://api.weatherapi.com/v1/current.json?key=74166b5031014ee1b39122710242608&q=${city}`
+      `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${city}`
     )
       .then((response) => response.json())
       .then((data) => {
