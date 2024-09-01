@@ -11,7 +11,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchWeatherData("London");
+    fetchWeatherData("Taipei");
   }, []);
 
   const fetchWeatherData = (city) => {
