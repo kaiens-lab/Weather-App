@@ -1,16 +1,23 @@
 import React from "react";
-import "./Panel.css";
+import "./WeatherPanel.css";
 
+/*------------------------------Panel Component------------------------------*/
+//Function: Manages user interactions with weather data:
+//lets users pick a city, displays weather info, and handles inputs and errors.
+
+//The data for these parameters comes from App.js.
 const WeatherPanel = ({ fetchWeatherData, weatherData, error }) => {
   const [cityInput, setCityInput] = React.useState("");
   const cities = ["Taipei", "New York", "California", "Tokyo"];
 
+  //Handles the event when a user clicks on a city name.
   const handleCityClick = (city) => {
     fetchWeatherData(city);
   };
 
+  //Handles the form submission event.
   const handleFormSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //Prevents the default form submission behavior.
     if (cityInput.trim() === "") {
       setCityInput("");
     } else {
@@ -30,10 +37,10 @@ const WeatherPanel = ({ fetchWeatherData, weatherData, error }) => {
           onChange={(e) => setCityInput(e.target.value)}
         />
         <button type="submit" className="submit">
-          <i className="fas fa-search"></i>
+          <i className="fas fa-search"></i> {/*Magnifying glass icon*/}
         </button>
       </form>
-      {error && <p className="error-message">{error}</p>}{" "}
+      {error && <p className="error-message">{error}</p>}
       <ul className="cities">
         {cities.map((city) => (
           <li key={city} className="city" onClick={() => handleCityClick(city)}>
@@ -41,6 +48,8 @@ const WeatherPanel = ({ fetchWeatherData, weatherData, error }) => {
           </li>
         ))}
       </ul>
+      {/*Weather details information*/}
+      {/*Generates an unordered list containing three metrics*/}
       {weatherData && (
         <ul className="details">
           <h4>Weather Details</h4>

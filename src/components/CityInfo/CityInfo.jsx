@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./CityInfo.css";
 import Icon from "./Icon";
 
+/*------------------------CityInfo Component------------------------*/
+// Function: Displays the city's weather based on the data received
+// from App.js through props.
+
+//The data for these parameters comes from App.js.
 const CityInfo = ({
   localtime,
   cityName,
@@ -14,6 +19,7 @@ const CityInfo = ({
 
   useEffect(() => {
     if (localtime) {
+      // The API returns `localtime` in this format: "2024-0-01 12:00"
       const y = parseInt(localtime.substr(0, 4));
       const d = parseInt(localtime.substr(5, 2));
       const m = parseInt(localtime.substr(8, 2));
@@ -47,8 +53,7 @@ const CityInfo = ({
         </div>
       </div>
       <div className="weather-condition">
-        <Icon conditionIcon={conditionIcon} isDay={isDay} />{" "}
-        {/* 传递 conditionIcon 和 isDay */}
+        <Icon conditionIcon={conditionIcon} isDay={isDay} />
         <p className="condition-text">{conditionText}</p>
       </div>
     </div>

@@ -1,7 +1,11 @@
 import { useEffect } from "react";
-import "./Weather.css";
+import "./StyleUpdater.css";
 
-const Weather = ({ weatherData }) => {
+/*------------------------Weather Component------------------------*/
+//功能：根據從 weatherData 中取得的天氣資料更新背景和按鈕樣式。
+//Function: Update the background and button styles based on the weather data obtained from weatherData.
+
+const StyleUpdater = ({ weatherData }) => {
   useEffect(() => {
     if (!weatherData) return;
 
@@ -21,7 +25,7 @@ const Weather = ({ weatherData }) => {
     if (code === 1000) {
       appElement.style.backgroundImage = `url(/assets/images/${timeOfDay}/clear.jpg)`;
       buttonElement.style.background =
-        timeOfDay === "night" ? "#181e27" : "#e5ba92";
+        timeOfDay === "night" ? "var(--midnightBlue)" : "var(--Beige)";
     } else if (
       [
         1003, 1006, 1009, 1030, 1069, 1087, 1135, 1273, 1276, 1279, 1282,
@@ -29,7 +33,7 @@ const Weather = ({ weatherData }) => {
     ) {
       appElement.style.backgroundImage = `url(/assets/images/${timeOfDay}/cloudy.jpg)`;
       buttonElement.style.background =
-        timeOfDay === "night" ? "#181e27" : "#fa6d1b";
+        timeOfDay === "night" ? "var(--midnightBlue)" : "var(--sunsetOrange)";
     } else if (
       [
         1063, 1069, 1072, 1150, 1153, 1180, 1183, 1186, 1189, 1192, 1195, 1204,
@@ -38,15 +42,15 @@ const Weather = ({ weatherData }) => {
     ) {
       appElement.style.backgroundImage = `url(/assets/images/${timeOfDay}/rainy.jpg)`;
       buttonElement.style.background =
-        timeOfDay === "night" ? "#325c80" : "#647d75";
+        timeOfDay === "night" ? "var(--deepOcean)" : "var(--sageGreen)";
     } else {
       appElement.style.backgroundImage = `url(/assets/images/${timeOfDay}/snowy.jpg)`;
       buttonElement.style.background =
-        timeOfDay === "night" ? "#1b1b1b" : "#4d72aa";
+        timeOfDay === "night" ? "var(--charcoalBlack)" : "var(--steelBlue)";
     }
   }, [weatherData]);
 
   return null; // This component does not render anything directly
 };
 
-export default Weather;
+export default StyleUpdater;

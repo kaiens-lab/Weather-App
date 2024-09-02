@@ -1,0 +1,14 @@
+:root {
+  --midnightBlue: #181e27;
+  --Beige: #e5ba92;
+  --sunsetOrange: #fa6d1b;
+  --sageGreen: #647d75;
+  --deepOcean: #325c80;
+  --charcoalBlack: #1b1b1b;
+  --steelBlue: #4d72aa;
+}
+
+.container {
+  transition: background-image 1s ease-in-out;
+  background-color: black; /* 黑屏效果 */
+}

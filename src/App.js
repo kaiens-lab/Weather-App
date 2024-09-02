@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Brand from "./components/Brand/Brand";
 import Temperature from "./components/Temp/Temp.jsx";
 import CityInfo from "./components/CityInfo/CityInfo.jsx";
-import WeatherPanel from "./components/Panel/Panel.jsx";
-import Weather from "./components/Weather/Weather.jsx";
+import WeatherPanel from "./components/WeatherPanel/WeatherPanel.jsx";
+import StyleUpdater from "./components/StyleUpdater/StyleUpdater.jsx";
 import "./styles/App.css";
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="container">
-      <Weather weatherData={weatherData} />
+      <StyleUpdater weatherData={weatherData} />
       <div className="weather-app-content">
         <Brand />
         {weatherData ? (
