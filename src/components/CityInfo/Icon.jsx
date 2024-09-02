@@ -16,7 +16,7 @@ const Icon = ({ conditionIcon, isDay }) => {
   const timeOfDay = isDay ? "day" : "night";
   const iconId = conditionIcon.split("/").pop();
 
-  const iconPath = `/assets/icons/${timeOfDay}/${iconId}`;
+  const iconPath = `/Weather-App/assets/icons/${timeOfDay}/${iconId}`;
 
   return <img src={iconPath} alt="Weather Icon" className="weather-icon" />;
 };

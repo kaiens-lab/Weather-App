@@ -23,7 +23,7 @@ const StyleUpdater = ({ weatherData }) => {
     appElement.style.height = "100vh"; // 讓容器高度填滿整個視窗
 
     if (code === 1000) {
-      appElement.style.backgroundImage = `url(/assets/images/${timeOfDay}/clear.jpg)`;
+      appElement.style.backgroundImage = `url(/Weather-App/assets/images/${timeOfDay}/clear.jpg)`;
       buttonElement.style.background =
         timeOfDay === "night" ? "var(--midnightBlue)" : "var(--Beige)";
     } else if (
@@ -31,7 +31,7 @@ const StyleUpdater = ({ weatherData }) => {
         1003, 1006, 1009, 1030, 1069, 1087, 1135, 1273, 1276, 1279, 1282,
       ].includes(code)
     ) {
-      appElement.style.backgroundImage = `url(/assets/images/${timeOfDay}/cloudy.jpg)`;
+      appElement.style.backgroundImage = `url(/Weather-App/assets/images/${timeOfDay}/cloudy.jpg)`;
       buttonElement.style.background =
         timeOfDay === "night" ? "var(--midnightBlue)" : "var(--sunsetOrange)";
     } else if (
@@ -40,11 +40,11 @@ const StyleUpdater = ({ weatherData }) => {
         1207, 1240, 1243, 1246, 1249, 1252,
       ].includes(code)
     ) {
-      appElement.style.backgroundImage = `url(/assets/images/${timeOfDay}/rainy.jpg)`;
+      appElement.style.backgroundImage = `url(/Weather-App/assets/images/${timeOfDay}/rainy.jpg)`;
       buttonElement.style.background =
         timeOfDay === "night" ? "var(--deepOcean)" : "var(--sageGreen)";
     } else {
-      appElement.style.backgroundImage = `url(/assets/images/${timeOfDay}/snowy.jpg)`;
+      appElement.style.backgroundImage = `url(/Weather-App/assets/images/${timeOfDay}/snowy.jpg)`;
       buttonElement.style.background =
         timeOfDay === "night" ? "var(--charcoalBlack)" : "var(--steelBlue)";
     }
