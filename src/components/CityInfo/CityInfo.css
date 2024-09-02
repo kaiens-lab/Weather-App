@@ -61,7 +61,7 @@
     margin-left: -5px;
   }
   .city-detail {
-    margin-left: -100px;
+    margin-left: -80px;
   }
   .city-name {
     font-size: 2rem;
@@ -78,8 +78,8 @@
 
 @media (max-width: 768px) {
   .city-info {
-    top: -39rem;
-    left: 18rem;
+    top: -37rem;
+    left: 19.5rem;
   }
   .city-detail {
     margin-left: -120px;
