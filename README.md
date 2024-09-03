@@ -17,15 +17,15 @@ The app gets weather data from WeatherAPI, and you can search for different citi
 
 ## 功能特點 / Features
 
-![ScreenShot-Berlin](/screenshots/ScreenShot-Berlin.jpeg)
+![ScreenShot-Berlin](./public/screenshots/ScreenShot-Berlin.jpeg)
 
-![ScreenShot-Singapore](/screenshots/ScreenShot-Singapore.jpeg)
+![ScreenShot-Singapore](./public/screenshots/ScreenShot-Singapore.jpeg)
 
-![ScreenShot-Taipei](/screenshots/ScreenShot-Taipei.jpeg)
+![ScreenShot-Taipei](./public/screenshots/ScreenShot-Taipei.jpeg)
 
-![ScreenShot-NewYork](/screenshots/ScreenShot-NewYork.jpeg)
+![ScreenShot-NewYork](./public/screenshots/ScreenShot-NewYork.jpeg)
 
-![ScreenShot-ClearNight](/screenshots/ScreenShot-ClearNight.jpeg)
+![ScreenShot-ClearNight](./public/screenshots/ScreenShot-ClearNight.jpeg)
 
 - **即時天氣更新 / Real-time Weather Updates:**  
   顯示即時天氣數據。
