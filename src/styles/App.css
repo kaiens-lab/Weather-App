@@ -6,7 +6,7 @@
   background-image: url(../../public/assets/images/day/cloudy.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; //Cover image full page
+  background-size: cover; /* Cover image full page */
 }
 
 .container::before {
