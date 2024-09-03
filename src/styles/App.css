@@ -4,9 +4,9 @@
   display: flex;
   flex-direction: column;
   background-image: url(../../public/assets/images/day/cloudy.jpg);
-  background-position: center; /*圖片中心置中*/
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; /*圖片佈滿頁面*/
+  background-size: cover; //Cover image full page
 }
 
 .container::before {

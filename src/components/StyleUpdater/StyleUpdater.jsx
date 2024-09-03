@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import "./StyleUpdater.css";
 
 /*------------------------Weather Component------------------------*/
-//功能：根據從 weatherData 中取得的天氣資料更新背景和按鈕樣式。
-//Function: Update the background and button styles based on the weather data obtained from weatherData.
+//Function: Update the background and button styles based on the weather data
+//obtained from weatherData.
 
 const StyleUpdater = ({ weatherData }) => {
   useEffect(() => {
@@ -17,10 +17,10 @@ const StyleUpdater = ({ weatherData }) => {
     const code = weatherData.current.condition.code;
     let timeOfDay = weatherData.current.is_day ? "day" : "night";
 
-    // 設置背景圖片樣式
-    appElement.style.backgroundSize = "cover"; // 確保圖片覆蓋整個容器
-    appElement.style.backgroundPosition = "center"; // 讓圖片居中顯示
-    appElement.style.height = "100vh"; // 讓容器高度填滿整個視窗
+    // Background image styles
+    appElement.style.backgroundSize = "cover";
+    appElement.style.backgroundPosition = "center";
+    appElement.style.height = "100vh";
 
     if (code === 1000) {
       appElement.style.backgroundImage = `url(/Weather-App/assets/images/${timeOfDay}/clear.jpg)`;
