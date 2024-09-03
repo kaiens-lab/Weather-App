@@ -6,7 +6,7 @@
   right: 0;
   background: rgba(110, 110, 110, 0.25);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px); /*霧化處理*/
+  backdrop-filter: blur(10px); // Blur effect
   z-index: 1;
   padding: 3em 2em;
   overflow-y: hidden;
