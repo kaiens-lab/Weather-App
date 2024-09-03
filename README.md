@@ -25,8 +25,6 @@ The app gets weather data from WeatherAPI, and you can search for different citi
 
 ![ScreenShot-NewYork](./public/screenshots/ScreenShot-NewYork.jpeg)
 
-![ScreenShot-ClearNight](./public/screenshots/ScreenShot-ClearNight.jpeg)
-
 - **即時天氣更新 / Real-time Weather Updates:**  
   顯示即時天氣數據。
 
