@@ -78,8 +78,7 @@
 
 @media (max-width: 768px) {
   .city-info {
-    top: -20rem;
-    left: 20rem;
+    top: -15rem;
   }
   .city-detail {
     margin-left: -120px;

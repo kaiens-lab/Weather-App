@@ -29,7 +29,8 @@
 
 @media (max-width: 768px) {
   .info-wrapper {
-    position: relative;
-    top: 15rem;
+    width: 100%;
+    position: fixed;
+    top: 16rem;
   }
 }
