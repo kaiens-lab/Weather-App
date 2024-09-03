@@ -20,9 +20,15 @@
   z-index: 0;
 }
 
-.weather-app {
+.weather-app-content {
   height: 100vh;
   position: relative;
   transition: 500ms; /*0.5s*/
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .weather-app-content {
+    max-height: 600px;
+  }
 }
