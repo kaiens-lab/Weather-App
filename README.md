@@ -17,13 +17,15 @@ The app gets weather data from WeatherAPI, and you can search for different citi
 
 ## 功能特點 / Features
 
-![Screenshot-desktop](./public/screenshots/ScreenShot-Berlin.png)
+![ScreenShot-Berlin](/screenshots/ScreenShot-Berlin.jpeg)
 
-![Screenshot-desktop](./public/screenshots/ScreenShot-Singapore.png)
+![ScreenShot-Singapore](/screenshots/ScreenShot-Singapore.jpeg)
 
-![Screenshot-desktop](./public/screenshots/ScreenShot-Taipei.png)
+![ScreenShot-Taipei](/screenshots/ScreenShot-Taipei.jpeg)
 
-![Screenshot-desktop](./public/screenshots/ScreenShot-NewYork.png)
+![ScreenShot-NewYork](/screenshots/ScreenShot-NewYork.jpeg)
+
+![ScreenShot-ClearNight](/screenshots/ScreenShot-ClearNight.jpeg)
 
 - **即時天氣更新 / Real-time Weather Updates:**  
   顯示即時天氣數據。
@@ -66,8 +68,6 @@ The app gets weather data from WeatherAPI, and you can search for different citi
 
    ```bash
    npm start
-
-
    ```
 
 開啟瀏覽器並輸入 http://localhost:3000 查看應用程式。  
@@ -96,7 +96,7 @@ The app gets weather data from WeatherAPI, and you can search for different citi
 
 ---
 
-- 此應用程式使用 WeatherAPI 來獲取即時天氣數據。  
+- 此應用程式使用 [WeatherAPI](https://www.weatherapi.com/) 來獲取即時天氣數據。  
   The app uses the WeatherAPI to fetch real-time weather data.
 
 - API 金鑰儲存在環境變數中以確保安全性。  
