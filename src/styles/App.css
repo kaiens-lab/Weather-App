@@ -28,7 +28,8 @@
 }
 
 @media (max-width: 768px) {
-  .weather-app-content {
-    max-height: 600px;
+  .info-wrapper {
+    position: relative;
+    top: 15rem;
   }
 }

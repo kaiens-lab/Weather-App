@@ -40,15 +40,17 @@ function App() {
         <Brand />
         {weatherData ? (
           <>
-            <Temperature temp={weatherData.current?.temp_c} />
-            <CityInfo
-              localtime={weatherData.location?.localtime}
-              cityName={weatherData.location?.name}
-              conditionText={weatherData.current?.condition?.text}
-              conditionIcon={weatherData.current?.condition?.icon}
-              conditionCode={weatherData.current?.condition?.code}
-              isDay={weatherData.current?.is_day}
-            />
+            <div className="info-wrapper">
+              <Temperature temp={weatherData.current?.temp_c} />
+              <CityInfo
+                localtime={weatherData.location?.localtime}
+                cityName={weatherData.location?.name}
+                conditionText={weatherData.current?.condition?.text}
+                conditionIcon={weatherData.current?.condition?.icon}
+                conditionCode={weatherData.current?.condition?.code}
+                isDay={weatherData.current?.is_day}
+              />
+            </div>
           </>
         ) : (
           !error && <p>Loading...</p>
