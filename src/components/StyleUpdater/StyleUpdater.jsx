@@ -25,7 +25,7 @@ const StyleUpdater = ({ weatherData }) => {
     const isSmallScreen = window.innerWidth <= 786;
     const imageSize = isSmallScreen ? `${timeOfDay}/small` : timeOfDay;
 
-    // 使用 process.env.PUBLIC_URL 設定圖片路徑
+    // Set the image path using process.env.PUBLIC_URL
     const baseUrl = process.env.PUBLIC_URL;
 
     if (code === 1000) {
