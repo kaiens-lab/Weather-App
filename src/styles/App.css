@@ -33,4 +33,7 @@
     position: fixed;
     top: 16rem;
   }
+  .weather-app-content {
+    height: 75vh;
+  }
 }
