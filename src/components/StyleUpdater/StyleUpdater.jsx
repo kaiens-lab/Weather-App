@@ -28,35 +28,59 @@ const StyleUpdater = ({ weatherData }) => {
     // Set the image path using process.env.PUBLIC_URL
     const baseUrl = process.env.PUBLIC_URL;
 
-    if (code === 1000) {
-      appElement.style.backgroundImage = `url(${baseUrl}/assets/images/${imageSize}/clear.jpg)`;
+    const weatherStyles = {
+      clear: {
+        codes: [1000],
+        image: "clear.jpg",
+        nightColor: "var(--midnightBlue)",
+        dayColor: "var(--Beige)",
+      },
+      cloudy: {
+        codes: [
+          1003, 1006, 1009, 1030, 1069, 1087, 1135, 1273, 1276, 1279, 1282,
+        ],
+        image: "cloudy.jpg",
+        nightColor: "var(--midnightBlue)",
+        dayColor: "var(--sunsetOrange)",
+      },
+      rainy: {
+        codes: [
+          1063, 1069, 1072, 1150, 1153, 1180, 1183, 1186, 1189, 1192, 1195,
+          1204, 1207, 1240, 1243, 1246, 1249, 1252,
+        ],
+        image: "rainy.jpg",
+        nightColor: "var(--deepOcean)",
+        dayColor: "var(--sageGreen)",
+      },
+      snowy: {
+        codes: [],
+        image: "snowy.jpg",
+        nightColor: "var(--charcoalBlack)",
+        dayColor: "var(--steelBlue)",
+      },
+    };
+
+    function applyWeatherStyle(code, timeOfDay) {
+      for (const weatherType in weatherStyles) {
+        const style = weatherStyles[weatherType];
+        if (style.codes.includes(code)) {
+          appElement.style.backgroundImage = `url(${baseUrl}/assets/images/${imageSize}/${style.image})`;
+          buttonElement.style.background =
+            timeOfDay === "night" ? style.nightColor : style.dayColor;
+          return;
+        }
+      }
+
+      const defaultStyle = weatherStyles.snowy;
+      appElement.style.backgroundImage = `url(${baseUrl}/assets/images/${imageSize}/${defaultStyle.image})`;
       buttonElement.style.background =
-        timeOfDay === "night" ? "var(--midnightBlue)" : "var(--Beige)";
-    } else if (
-      [
-        1003, 1006, 1009, 1030, 1069, 1087, 1135, 1273, 1276, 1279, 1282,
-      ].includes(code)
-    ) {
-      appElement.style.backgroundImage = `url(${baseUrl}/assets/images/${imageSize}/cloudy.jpg)`;
-      buttonElement.style.background =
-        timeOfDay === "night" ? "var(--midnightBlue)" : "var(--sunsetOrange)";
-    } else if (
-      [
-        1063, 1069, 1072, 1150, 1153, 1180, 1183, 1186, 1189, 1192, 1195, 1204,
-        1207, 1240, 1243, 1246, 1249, 1252,
-      ].includes(code)
-    ) {
-      appElement.style.backgroundImage = `url(${baseUrl}/assets/images/${imageSize}/rainy.jpg)`;
-      buttonElement.style.background =
-        timeOfDay === "night" ? "var(--deepOcean)" : "var(--sageGreen)";
-    } else {
-      appElement.style.backgroundImage = `url(${baseUrl}/assets/images/${imageSize}/snowy.jpg)`;
-      buttonElement.style.background =
-        timeOfDay === "night" ? "var(--charcoalBlack)" : "var(--steelBlue)";
+        timeOfDay === "night" ? defaultStyle.nightColor : defaultStyle.dayColor;
     }
+
+    applyWeatherStyle(code, timeOfDay);
   }, [weatherData]);
 
-  return null; // This component does not render anything directly
+  return null;
 };
 
 export default StyleUpdater;
