@@ -1,7 +1,7 @@
 import React from "react";
 import "./Brand.css";
 
-function Brand(props) {
+function Brand() {
   return <h3 className="brand">The Weather</h3>;
 }
 
