@@ -1,8 +1,11 @@
 import React from "react";
 import "./Temp.css";
 
-function Temperature({ temp }) {
-  return <h1 className="temp">{temp}&#176;</h1>;
-}
+type TemperatureProps = {
+  temp: string;
+};
 
+const Temperature: React.FC<TemperatureProps> = ({ temp }) => {
+  return <h1 className="temp">{temp}&#176;</h1>;
+};
 export default Temperature;
