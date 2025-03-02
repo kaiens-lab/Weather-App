@@ -5,18 +5,36 @@ import "./WeatherPanel.css";
 //Function: Manages user interactions with weather data:
 //lets users pick a city, displays weather info, and handles inputs and errors.
 
+type WeatherPanelProps = {
+  fetchWeatherData: (city: string) => void;
+  weatherData: WeatherData | null;
+  error: string;
+};
+
+type WeatherData = {
+  current: {
+    cloud: number;
+    humidity: number;
+    wind_kph: number;
+  };
+};
+
 //The data for these parameters comes from App.js.
-const WeatherPanel = ({ fetchWeatherData, weatherData, error }) => {
+const WeatherPanel: React.FC<WeatherPanelProps> = ({
+  fetchWeatherData,
+  weatherData,
+  error,
+}) => {
   const [cityInput, setCityInput] = React.useState("");
   const cities = ["Taipei", "New York", "California", "Tokyo"];
 
   //Handles the event when a user clicks on a city name.
-  const handleCityClick = (city) => {
+  const handleCityClick = (city: string) => {
     fetchWeatherData(city);
   };
 
   //Handles the form submission event.
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); //Prevents the default form submission behavior.
     if (cityInput.trim() === "") {
       setCityInput("");
@@ -28,7 +46,11 @@ const WeatherPanel = ({ fetchWeatherData, weatherData, error }) => {
 
   return (
     <div className="panel">
-      <form id="locationInput" onSubmit={handleFormSubmit}>
+      <form
+        id="locationInput"
+        data-testid="search-form"
+        onSubmit={handleFormSubmit}
+      >
         <input
           type="text"
           className="search"
