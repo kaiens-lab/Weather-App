@@ -6,7 +6,12 @@ import React from "react";
 
 // 'conditionIcon' and 'isDay' come from App.js
 // Passed through CityInfo to Icon
-const Icon = ({ conditionIcon, isDay }) => {
+type IconProps = {
+  conditionIcon: string;
+  isDay: boolean;
+};
+
+const Icon: React.FC<IconProps> = ({ conditionIcon, isDay }) => {
   if (!conditionIcon) {
     return null;
   }
@@ -18,7 +23,14 @@ const Icon = ({ conditionIcon, isDay }) => {
 
   const iconPath = `/Weather-App/assets/icons/${timeOfDay}/${iconId}`;
 
-  return <img src={iconPath} alt="Weather Icon" className="weather-icon" />;
+  return (
+    <img
+      data-testid="icon-component"
+      src={iconPath}
+      alt="Weather Icon"
+      className="weather-icon"
+    />
+  );
 };
 
 export default Icon;
