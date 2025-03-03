@@ -1,23 +1,16 @@
 import React from "react";
 import "./WeatherPanel.css";
+import { WeatherData } from "../../types";
 
 /*------------------------------Panel Component------------------------------*/
 //Function: Manages user interactions with weather data:
 //lets users pick a city, displays weather info, and handles inputs and errors.
 
-type WeatherPanelProps = {
+interface WeatherPanelProps {
   fetchWeatherData: (city: string) => void;
   weatherData: WeatherData | null;
-  error: string;
-};
-
-type WeatherData = {
-  current: {
-    cloud: number;
-    humidity: number;
-    wind_kph: number;
-  };
-};
+  error: string | null;
+}
 
 //The data for these parameters comes from App.js.
 const WeatherPanel: React.FC<WeatherPanelProps> = ({
