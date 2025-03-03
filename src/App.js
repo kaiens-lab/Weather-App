@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Brand from "./components/Brand/Brand";
-import Temperature from "./components/Temp/Temp.jsx";
-import CityInfo from "./components/CityInfo/CityInfo.jsx";
-import WeatherPanel from "./components/WeatherPanel/WeatherPanel.jsx";
-import StyleUpdater from "./components/StyleUpdater/StyleUpdater.jsx";
+import Brand from "./components/Brand/Brand.tsx";
+import Temperature from "./components/Temp/Temp.tsx";
+import CityInfo from "./components/CityInfo/CityInfo.tsx";
+import WeatherPanel from "./components/WeatherPanel/WeatherPanel.tsx";
+import StyleUpdater from "./components/StyleUpdater/StyleUpdater.tsx";
 import "./styles/App.css";
 
 function App() {
