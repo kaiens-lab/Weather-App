@@ -7,8 +7,8 @@ type CityInfoProps = {
   cityName: string;
   conditionText: string;
   conditionIcon: string;
-  isDay: boolean;
-  day: string;
+  conditionCode: number;
+  isDay: number;
 };
 
 const CityInfo: React.FC<CityInfoProps> = ({
@@ -16,6 +16,7 @@ const CityInfo: React.FC<CityInfoProps> = ({
   cityName,
   conditionText,
   conditionIcon,
+  conditionCode,
   isDay,
 }) => {
   const [date, setDate] = useState("");
