@@ -1,23 +1,10 @@
 import React, { useEffect, useMemo } from "react";
 import "./StyleUpdater.css";
+import { WeatherData } from "../../types";
 
 /*------------------------Weather Component------------------------*/
 //Function: Update the background and button styles based on the weather data
 //obtained from weatherData.
-
-type WeatherData = {
-  current: {
-    cloud: number;
-    condition: {
-      code: number;
-      text: string;
-      icon: string;
-    };
-    is_day: number;
-    humidity: number;
-    wind_kph: number;
-  };
-};
 
 type StyleUpdaterProps = {
   weatherData: WeatherData;
