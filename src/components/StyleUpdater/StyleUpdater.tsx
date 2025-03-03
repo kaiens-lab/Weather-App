@@ -82,7 +82,7 @@ const StyleUpdater: React.FC<StyleUpdaterProps> = ({ weatherData }) => {
           ? selectedStyle.nightColor
           : selectedStyle.dayColor,
     };
-  }, [weatherData]);
+  }, [weatherData, baseUrl]);
 
   useEffect(() => {
     if (!weatherData) return;
@@ -93,7 +93,7 @@ const StyleUpdater: React.FC<StyleUpdaterProps> = ({ weatherData }) => {
     if (!container || !button) return;
     container.style.backgroundImage = backgroundImage;
     button.style.background = buttonBackground;
-  }, [backgroundImage, buttonBackground]);
+  }, [backgroundImage, buttonBackground, weatherData]);
 
   return null;
 };
