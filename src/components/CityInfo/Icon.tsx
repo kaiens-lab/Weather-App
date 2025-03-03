@@ -8,7 +8,7 @@ import React from "react";
 // Passed through CityInfo to Icon
 type IconProps = {
   conditionIcon: string;
-  isDay: boolean;
+  isDay: number;
 };
 
 const Icon: React.FC<IconProps> = ({ conditionIcon, isDay }) => {
