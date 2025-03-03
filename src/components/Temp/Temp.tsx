@@ -2,7 +2,7 @@ import React from "react";
 import "./Temp.css";
 
 type TemperatureProps = {
-  temp: string;
+  temp: number;
 };
 
 const Temperature: React.FC<TemperatureProps> = ({ temp }) => {
