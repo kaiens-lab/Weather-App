@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import WeatherPanel from "./WeatherPanel";
+import { WeatherData } from "../../types";
 
 //Test: default state
 test("renders WeatherPanel with default elements", () => {
@@ -61,10 +62,20 @@ test("calls fetchWeatherData when submitting form", () => {
 
 //Test: display weather detail
 test("displays weather details when weatherData is available", () => {
-  const mockWeatherData = {
-    current: { cloud: 50, humidity: 80, wind_kph: 10 },
+  const mockWeatherData: WeatherData = {
+    location: {
+      name: "Test City",
+      localtime: "2025-03-03 12:00",
+    },
+    current: {
+      cloud: 50,
+      humidity: 80,
+      wind_kph: 10,
+      temp_c: 25,
+      condition: { text: "Cloudy", icon: "", code: 1003 },
+      is_day: 1,
+    },
   };
-
   render(
     <WeatherPanel
       fetchWeatherData={jest.fn()}
