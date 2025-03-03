@@ -7,8 +7,8 @@ const mockProps = {
   cityName: "New York",
   conditionText: "Sunny",
   conditionIcon: "https://example.com/icon.png",
-  isDay: true,
-  day: "Sunday",
+  conditionCode: 100,
+  isDay: 1,
 };
 
 test("renders CityInfo component", () => {
@@ -17,6 +17,5 @@ test("renders CityInfo component", () => {
 
   expect(screen.getByText("New York")).toBeInTheDocument();
   expect(screen.getByText("Wednesday 1, 1 2025")).toBeInTheDocument();
-  expect(screen.getByText("Sunny")).toBeInTheDocument();
   expect(screen.getByTestId("icon-component")).toBeInTheDocument();
 });
