@@ -12,12 +12,16 @@ type StyleUpdaterProps = {
 
 const StyleUpdater: React.FC<StyleUpdaterProps> = ({ weatherData }) => {
   const baseUrl = process.env.PUBLIC_URL;
+  const code = weatherData?.current.condition.code;
+  const isDay = weatherData?.current.is_day;
 
   // Calculate the background image and button color using useMemo.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const { backgroundImage, buttonBackground } = useMemo(() => {
-    if (!weatherData) return { backgroundImage: "", buttonBackground: "" };
+    if (!code || isDay === undefined)
+      return { backgroundImage: "", buttonBackground: "" };
 
-    const { code } = weatherData.current.condition;
+    // const { code } = weatherData.current.condition;
     const timeOfDay = weatherData.current.is_day ? "day" : "night";
     const isSmallScreen = window.innerWidth <= 786;
     const imageSize = isSmallScreen ? `${timeOfDay}/small` : timeOfDay;
@@ -69,18 +73,16 @@ const StyleUpdater: React.FC<StyleUpdaterProps> = ({ weatherData }) => {
           ? selectedStyle.nightColor
           : selectedStyle.dayColor,
     };
-  }, [weatherData, baseUrl]);
+  }, [code, isDay, baseUrl]);
 
   useEffect(() => {
-    if (!weatherData) return;
-
     const container = document.querySelector(".container") as HTMLElement;
     const button = document.querySelector("button") as HTMLElement | null;
 
     if (!container || !button) return;
     container.style.backgroundImage = backgroundImage;
     button.style.background = buttonBackground;
-  }, [backgroundImage, buttonBackground, weatherData]);
+  }, [backgroundImage, buttonBackground]);
 
   return null;
 };
